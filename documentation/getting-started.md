@@ -43,7 +43,7 @@ Developers that have contributed to this repository have experience in using Art
 
 # Installation
 
-Please follow the [Installation Guide](documentation/installation/windows-10.md) to install Magic Leap 1 Acute Lymphoblastic Leukemia Detection System.
+Please follow the [Installation Guide](installation/windows-10.md) to install Magic Leap 1 Acute Lymphoblastic Leukemia Detection System.
 
 &nbsp;
 
