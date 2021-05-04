@@ -138,7 +138,7 @@ You now need to setup your device for development. Power up your Magic Leap 1 an
 
 # Continue
 
-You are now ready to continue with the [getting started guide](../getting-started "getting started guide") to take the final steps in getting your application running.
+You are now ready to continue with the [getting started guide](../getting-started.md "getting started guide") to take the final steps in getting your application running.
 
 &nbsp;
 
