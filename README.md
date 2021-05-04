@@ -3,7 +3,7 @@
 
 ![Magic Leap 1 Acute Lymphoblastic Leukemia Detection System](assets/images/hias-magic-leap-acute-lymphoblastic-leukemia-detection.png)
 
-[![CURRENT VERSION](https://img.shields.io/badge/CURRENT%20VERSION-0.0.0-blue.svg)](https://github.com/AIIAL/Magic-Leap-ALL-Detection-System/tree/0.0.0) [![CURRENT DEV BRANCH](https://img.shields.io/badge/CURRENT%20DEV%20BRANCH-0.1.0-blue.svg)](https://github.com/AIIAL/Magic-Leap-ALL-Detection-System/tree/0.1.0)  [![Contributions Welcome!](https://img.shields.io/badge/Contributions-Welcome-lightgrey.svg)](CONTRIBUTING.md)  [![Issues](https://img.shields.io/badge/Issues-Welcome-lightgrey.svg)](issues) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-blue.svg)](LICENSE)
+[![CURRENT VERSION](https://img.shields.io/badge/CURRENT%20VERSION-1.0.0-blue.svg)](https://github.com/AIIAL/Magic-Leap-ALL-Detection-System/tree/1.0.0) [![CURRENT DEV BRANCH](https://img.shields.io/badge/CURRENT%20DEV%20BRANCH-2.0.0-blue.svg)](https://github.com/AIIAL/Magic-Leap-ALL-Detection-System/tree/2.0.0)  [![Contributions Welcome!](https://img.shields.io/badge/Contributions-Welcome-lightgrey.svg)](CONTRIBUTING.md)  [![Issues](https://img.shields.io/badge/Issues-Welcome-lightgrey.svg)](issues) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-blue.svg)](LICENSE)
 
 &nbsp;
 
@@ -12,12 +12,12 @@
 - [Abstract](#abstract)
 - [DISCLAIMER](#disclaimer)
 - [Introduction](#introduction)
-  - [Acute Lymphoblastic Leukemia](#acute-lymphoblastic-leukemia)
-  - [Dataset](#dataset)
-    - [ALL_IDB1](#all_idb1)
-  - [Model](#model)
-  - [Raspberry Pi 4](#raspberry-pi-4)
-  - [HIAS](#hias)
+- [Acute Lymphoblastic Leukemia](#acute-lymphoblastic-leukemia)
+- [Acute Lymphoblastic Leukemia Image Database for Image Processing dataset](#acute-lymphoblastic-leukemia-image-database-for-image-processing-dataset)
+  - [ALL_IDB1](#all_idb1)
+- [Acute Lymphoblastic Leukemia oneAPI Classifier](#acute-lymphoblastic-leukemia-oneapi-classifier)
+- [Raspberry Pi 4](#raspberry-pi-4)
+- [HIAS](#hias)
 - [About Magic Leap 1](#about-magic-leap-1)
 - [About Unity 3D](#about-unity-3d)
 - [Get Started](#get-started)
@@ -49,32 +49,42 @@ Developers that have contributed to this repository have experience in using Art
 
 The Magic Leap Acute Lymphoblastic Leukemia (ALL) Detection System 2020 combines Mixed Reality with an Artificial Intelligence algorithm trained to detect Acute Lymphoblastic Leukemia in unseen images.
 
-## Acute Lymphoblastic Leukemia
+&nbsp;
+
+# Acute Lymphoblastic Leukemia
 
 Acute Lymphoblastic Leukemia (ALL) is a cancer of the blood which attacks the white blood cells, or Lymphocytes, which play an important part in the immune system. With ALL, an abnormal number of immature Lymphocytes are produced meaning a reduction in healthy cells.
 
-## Dataset
+&nbsp;
+
+## Acute Lymphoblastic Leukemia Image Database for Image Processing dataset
 You need to be granted access to use the Acute Lymphoblastic Leukemia Image Database for Image Processing dataset. You can find the application form and information about getting access to the dataset on [this page](https://homes.di.unimi.it/scotti/all/#download) as well as information on how to contribute back to the project [here](https://homes.di.unimi.it/scotti/all/results.php). If you are not able to obtain a copy of the dataset please feel free to try this tutorial on your own dataset, we would be very happy to find additional AML & ALL datasets.
 
-### ALL_IDB1
+## ALL_IDB1
 
 In this project, [ALL-IDB1](https://homes.di.unimi.it/scotti/all/#datasets) is used, one of the datsets from the Acute Lymphoblastic Leukemia Image Database for Image Processing dataset. We will use data augmentation to increase the amount of training and testing data we have.
 
 "The ALL_IDB1 version 1.0 can be used both for testing segmentation capability of algorithms, as well as the classification systems and image preprocessing methods. This dataset is composed of 108 images collected during September, 2005. It contains about 39000 blood elements, where the lymphocytes has been labeled by expert oncologists. The images are taken with different magnifications of the microscope ranging from 300 to 500."
 
-## Model
+&nbsp;
 
-The project uses a Tensorflow classifier that was trained using Intel's OneAPI, and OpenVINO for running the model a Rasperry Pi 4.
+# Acute Lymphoblastic Leukemia oneAPI Classifier
 
-This project uses the trained model from the [Acute Lymphoblastic Leukemia oneAPI Classifier](https://github.com/AIIAL/Acute-Lymphoblastic-Leukemia-oneAPI-Classifier "Acute Lymphoblastic Leukemia oneAPI Classifier"). The model was trained using Intel's OneAPI for optimization, and OpenVINO for running the model a Rasperry Pi 4.
+The project uses a Tensorflow classifier that was trained using Intel's OneAPI, and OpenVINO for deploying and running the model on a Rasperry Pi 4.
+
+This project uses the trained model from the [Acute Lymphoblastic Leukemia oneAPI Classifier](https://github.com/AIIAL/Acute-Lymphoblastic-Leukemia-oneAPI-Classifier "Acute Lymphoblastic Leukemia oneAPI Classifier").
 
 The model was trained using positive and negative samples achieving 98% accuracy at detecting ALL in unseen images.
 
-## Raspberry Pi 4
+&nbsp;
 
-The classifier is homed on a Raspberry Pi 4 which hosts a local endpoint making the classifier accessible to the Magic Leap application. This feature allows near real-time classification of ALL in Mixed Reality over the local network.
+# Raspberry Pi 4
 
-## HIAS
+The classifier is homed on a Raspberry Pi 4 which hosts a local endpoint exposing the classifier to the Magic Leap application. This feature allows near real-time classification of ALL in Mixed Reality over the local network.
+
+&nbsp;
+
+# HIAS
 
 The classifier is connected to the HIAS iotJumpWay MQTT broker, requests are authenticated using the HIAS private blockchain via the MQTT IoT Agent, and classifications are stored in the historical database along with a hash of the classification for data integrity. The IoT Agent stores contextual data of the classifier in the HIASCDI Context Broker.
 
@@ -94,36 +104,35 @@ To develop applications for Magic Leap 1 we use the [Magic Leap Lab](https://dev
 
 # About Unity 3D
 
-[![Unity](assets/images/unity.jpg)](https://unity.com/)
-
 This project uses [Unity 3d](https://unity.com/ "Unity 3d"), a real-time 3D development platform. Combined with the [Lumin SDK](https://developer.magicleap.com/en-us/learn/guides/lumin-sdk-latest-release-notes "Lumin SDK"), Unity allows you to create breath taking, next generation projects for the Magic Leap Spatial Computing Environment.
 
 &nbsp;
 
-# Contributing
+# GETTING STARTED
 
-The Peter Moss Acute Myeloid & Lymphoblastic Leukemia AI Research Project encourages and welcomes code contributions, bug fixes and enhancements from the Github.
+Ready to get started ? Head over to the [Getting Started guide](documentation/getting-started.md) for instructions on how to download/install and setup the Acute Lymphoblastic Leukemia oneAPI Classifier 2021.
+
+&nbsp;
+
+# Contributing
+The Asociación de Investigacion en Inteligencia Artificial Para la Leucemia Peter Moss encourages and welcomes code contributions, bug fixes and enhancements from the Github community.
 
 Please read the [CONTRIBUTING](CONTRIBUTING.md "CONTRIBUTING") document for a full guide to forking our repositories and submitting your pull requests. You will also find information about our code of conduct on this page.
 
 ## Contributors
-
-- [Adam Milton-Barker](https://www.leukemiaresearchassociation.ai/team/adam-milton-barker "Adam Milton-Barker") - [Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss](https://www.leukemiaresearchassociation.ai "Asociacion De Investigacion En Inteligencia Artificial Para La Leucemia Peter Moss") President & Lead Developer, Sabadell, Spain
+- [Adam Milton-Barker](https://www.leukemiaairesearch.com/association/volunteers/adam-milton-barker "Adam Milton-Barker") - [Asociación de Investigacion en Inteligencia Artificial Para la Leucemia Peter Moss](https://www.leukemiaresearchassociation.ai "Asociación de Investigacion en Inteligencia Artificial Para la Leucemia Peter Moss") President/Founder & Lead Developer, Sabadell, Spain
 
 &nbsp;
 
 # Versioning
-
 We use SemVer for versioning.
 
 &nbsp;
 
 # License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE.md "LICENSE") file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE "LICENSE") file for details.
 
 &nbsp;
 
 # Bugs/Issues
-
 We use the [repo issues](issues "repo issues") to track bugs and general requests related to using this project. See [CONTRIBUTING](CONTRIBUTING.md "CONTRIBUTING") for more info on how to submit bugs, feature requests and proposals.
