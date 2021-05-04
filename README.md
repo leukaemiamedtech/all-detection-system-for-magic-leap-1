@@ -66,7 +66,7 @@ In this project, [ALL-IDB1](https://homes.di.unimi.it/scotti/all/#datasets) is u
 
 The project uses a Tensorflow classifier that was trained using Intel's OneAPI, and OpenVINO for running the model a Rasperry Pi 4.
 
-This project uses the trained model from the [OneAPI Acute Lymphoblastic Leukemia Classifier](https://github.com/AMLResearchProject/OneAPI-Acute-Lymphoblastic-Leukemia-Classifier-2020/tree/master/CNN/Model "OneAPI Acute Lymphoblastic Leukemia Classifier"). The model was trained using Intel's OneAPI for optimization, and OpenVINO for running the model a Rasperry Pi 4.
+This project uses the trained model from the [Acute Lymphoblastic Leukemia oneAPI Classifier](https://github.com/AIIAL/Acute-Lymphoblastic-Leukemia-oneAPI-Classifier "Acute Lymphoblastic Leukemia oneAPI Classifier"). The model was trained using Intel's OneAPI for optimization, and OpenVINO for running the model a Rasperry Pi 4.
 
 The model was trained using positive and negative samples achieving 98% accuracy at detecting ALL in unseen images.
 
